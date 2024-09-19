@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\RohiniASP.NetMVC.props" />
+</Project>
