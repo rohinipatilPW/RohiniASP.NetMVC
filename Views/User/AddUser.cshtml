@@ -3,6 +3,8 @@
 *@
 @{
 }
+
+@model RohiniASP.NetMVC.Models.UserModel
 <style>
     tbody, td, tfoot, th, thead, tr {
         border-color: inherit;
@@ -11,16 +13,16 @@
     }
 </style>
 <div>
-    <form>
+    <form  method="post">
     <h1>User Details Page</h1>
     
     <label> Enter User Name </label>
-    <input type="text" />
+    <input type="text" class="form-control" asp-for="Name" />
 
     <label> Enter User Email </label>
-    <input type="email" />
+        <input type="email" class="form-control" asp-for="Email" />
 
-    <button>Add User</button>
+    <button type="submit">Add User</button>
     </form>
 
 <h3>----------- User Listing --------</h3>

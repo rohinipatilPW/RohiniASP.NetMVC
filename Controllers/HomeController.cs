@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using RohiniASP.NetMVC.Data;
 using RohiniASP.NetMVC.Models;
 using System.Diagnostics;
 
@@ -6,6 +7,7 @@ namespace RohiniASP.NetMVC.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDBContext _context = new ApplicationDBContext()
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -15,7 +17,8 @@ namespace RohiniASP.NetMVC.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var listOfData = _context.Users.ToList();
+            return View(listOfData);
         }
 
         public IActionResult Privacy()
